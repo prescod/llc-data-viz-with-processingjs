@@ -4,6 +4,8 @@
 
 A full day introductory to ProcessingJS workshop. Students should already have basic understanding of HTML & CSS.
 
+Slides are <a href="https://github.com/prescod/llc-data-viz-with-processingjs/tree/gh-pages/slides.html">here</a>.
+
 <p class="left">Content created by <a href="http://christinatruong.com">Christina Truong</a>, <a href="http://kathrynbarrett.ca">Kathryn Barrett</a>, <a href="http://sspboyd.ca">Stephen Boyd</a>, and <a href="http://www.wolfewylie.com">William Wolfe-Wylie</a>
 
 Created by [Christina Truong](http://christinatruong.com), [Kathryn Barrett](http://kathrynbarrett.ca), [Stephen Boyd](http://sspboyd.ca), [William Wolfe-Wylie](http://www.wolfewylie.com) for [Ladies Learning Code](http://ladieslearningcode.com).
