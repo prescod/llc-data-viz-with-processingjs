@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
   <link rel="shortcut icon" href="framework/img/favicon.ico">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
   <!-- opens all links in a new window -->
   <base target="_blank">
 </head>
@@ -385,7 +385,7 @@ new Chart(ctx, chartConfiguration);
 1. Go back and look at the last few slides and convince yourself that they are all
 representing the same basic data structure.
 
-2. Create your own chartDefinition from scratch, representing one or more Datasets
+2. Create your own chartConfiguration from scratch, representing one or more Datasets
 that are relevant to you.
       </script>
     </section>
@@ -454,6 +454,10 @@ example
 - bar.barThickness - to set how thick the bars should be in a bar
 graph.
 
+
+<p>All of them are documented here: 
+http://www.chartjs.org/docs/latest/
+</p>
 </script>
  </section>
 
@@ -484,21 +488,55 @@ new Chart(ctx, chartConfiguration);
       </script>
     </section>
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #More about options
 
-        You can learn more about options that are available at this URL:
+   <section class="slide">
+  <h1>We have a title...in Ladies Learning Code Colour!</h1>
+    <div style="width:800px; height:800px;">
+ 	   <canvas id="titleChart" width="800" height="800"></canvas>
+   </div>
+     <script>
+ var ctx = document.getElementById("titleChart") .getContext('2d');
 
-        <a href="http://www.chartjs.org/docs/latest/">http://www.chartjs.org/docs/latest/</a>
-      </script>
-    </section>
+ var chartConfiguration = {
+  "type": "bar",
+  "data": {
+   "labels": ["Jan", "Feb", "Mar", "Apr"],
+   "datasets": [
+    {
+    "label": "2017 Data",
+    "backgroundColor": "red",
+    "data": [65, 59, 80, 81]
+    },
+    {
+    "label": "2018 Data",
+    "backgroundColor": "blue",
+    "data": [83, 87, 79, 93]
+    }
+   ]
+  }
+ }
+
+ chartConfiguration.options = 
+  { scales: 
+      {yAxes:
+          [{ticks:{beginAtZero:true}}]
+      },
+    title:
+      {text: "TPS Report",
+       display: true,
+       fontColor: "#B109AA"}
+ };
+
+
+ new Chart(ctx, chartConfiguration);
+     </script>
+   </section>
 
     <section class="slide" data-markdown >
       <script type="text/template">
         #More about options
 
-        You can learn more about options that are available at this URL:
+        You can learn more about options that are available here:
 
         <a href="http://www.chartjs.org/docs/latest/">http://www.chartjs.org/docs/latest/</a>
       </script>
@@ -514,6 +552,15 @@ new Chart(ctx, chartConfiguration);
       <h1>Horizontal Bar Chart</h1>
 
       <p>Identical to a vertical bar chart except type="horizontalBar"</p>
+
+<script type="text/template">
+<code>
+var chartConfiguration = 
+  {type:"line",
+    data: data};
+</code>
+</script>
+
 <div style="width:400px; height:400px">
   <canvas id="horizontalChart"  width="400" height="400"></canvas>
 </div>
@@ -867,6 +914,25 @@ var dataset1 = {label:"Age data",
       <script type="text/template">
       <h1> Comma Separated Value (CSV) files</h1>
 
+<code><xmp>Under 5 years,21434,10955,10479
+5 to 9 years,20785,10624,10162
+10 to 14 years,19893,10178,9714
+15 to 19 years,21086,10719,10367
+20 to 24 years,21154,10684,10470
+25 to 29 years,21453,10928,10525
+30 to 34 years,19632,9761,9871
+35 to 39 years,19888,9902,9986
+40 to 44 years,20559,10172,10387
+45 to 49 years,22527,11092,11435
+50 to 54 years,21860,10692,11169
+55 to 59 years,19172,9318,9854
+60 to 64 years,16223,7667,8556
+65 to 69 years,12020,5672,6349
+70 to 74 years,8936,4063,4873
+75 to 79 years,7181,3020,4161
+80 to 84 years,5783,2408,3375
+85 years and over,4693,1631,3062
+</xmp></code>
 
     </script>
     </section>
@@ -904,7 +970,7 @@ var dataset1 = {label:"Age Data",
     <section class="slide last">
       <h1>Thank you!</h1>
       <h2 class="heading-bg">
-        <span>Intro to ProcessingJS</span>
+        <span>Data Visualization in Javascript</span>
       </h2>
 
       <!-- <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
