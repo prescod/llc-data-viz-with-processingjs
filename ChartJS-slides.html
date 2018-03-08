@@ -280,6 +280,18 @@ data.datasets=[
       </script>
     </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Objects in objects in Objects
+
+All of the lines in our last slide describe a single data-structure, the 
+chartConfiguration. You could think of the chartConfiguration as one big 
+object.
+
+      </script>
+    </section>
+
+
     <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #Digging into the Chart Configuration
@@ -287,16 +299,6 @@ data.datasets=[
     </section>
 
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        # Objects in objects in Objects
-
-All of the lines in our last slide describe a single data-structure, the 
-chartConfiguration. You could equally create the chartConfiguration as one big 
-object.
-
-      </script>
-    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -370,10 +372,10 @@ that are relevant to you.
 ```javascript
 
 // As before
-var chartConfiguration = { };
+var chartConfiguration = { ... };
 
 // ADD THIS LINE
-chartConfiguration.options = {"scales":{"yAxes":[{"ticks":{"beginAtZero":true}}]}};
+chartConfiguration.options = {scales:{yAxes:[{ticks:{beginAtZero:true}}]}};
 new Chart(ctx, chartConfiguration);
 ```
 </script>
@@ -423,29 +425,42 @@ graph.
  </section>
 
 
-
-
-
-
-
-
     <section class="slide basic-web-page" data-markdown>
       <script type="text/template">
-        #HTML + CSS + JavaScript = Basic web page
+#Let's set some options
 
-        **HTML (Hypertext Markup Language)** is a _markup_ language used to define the content.
+```javascript
+// As before
+var chartConfiguration = { ... };
 
-        <p class="example">I'm just a paragraph.</p>
+// ADD THIS STUFF
+chartConfiguration.options = 
+  { scales: 
+      {yAxes:
+          [{ticks:{beginAtZero:true}}]
+      },
+    title:
+      {text: "TPS Report",
+       display: true,
+       fontColor: "#FF00FF"}
+  };
 
-        **CSS (Cascading Style Sheets)** is a _style sheet_ language used to create the presentation and look of a site.
+new Chart(ctx, chartConfiguration);
+```
 
-        <p class="example css">I'm a paragraph with <span style="color:purple;">style</span>.</p>
-
-        **JavaScript** is a _programming_ language used to define the behavior and used to add functionality to a website.
-
-        <p class="example" onclick="alert('Clicked!');">I'm a paragraph that can be clicked. Try it!</p>
       </script>
     </section>
+
+
+
+
+
+
+
+
+
+
+
 
     <section class="slide title" data-markdown data-toc>
       <script type="text/template">
