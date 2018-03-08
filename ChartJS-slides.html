@@ -162,7 +162,7 @@ easier.
 
 
     <section class="slide">
-      <h2>Boilerplate HTML for ChartJS Page</h2>
+      <h1>Boilerplate HTML for ChartJS Page</h1>
 <code><xmp><html>
 <head>
   <title>My Chart</title>
@@ -183,13 +183,13 @@ easier.
 
     <section class="slide"  data-markdown>
       <script type="text/template">
-    <h2>Making a Chart</h2>
+    <h1>Making a Chart</h1>
 
       Inside of the script tag you need code like this:
 ```javascript
 var ctx = document.getElementById("myChart") .getContext('2d');
 
-data = {}
+var data = {}
 
 var chartConfiguration = {"type":"bar", "data":data};
 
@@ -200,7 +200,7 @@ new Chart(ctx, chartConfiguration);
 
     <section class="slide" data-markdown>
       <script type="text/template">
-    <h2>Cool...but not cool</h2>
+    <h1>Cool...but not cool</h1>
 
   Now we have a boring grey chart. What about...
 
@@ -215,7 +215,7 @@ We'll get there!
 
     <section class="slide" data-markdown>
 <script type="text/template">
-    <h2>Adding labels</h2>
+    <h1>Adding labels</h1>
 We can add labels that match the data we're expecting:
 
 ```javascript
@@ -302,7 +302,7 @@ object.
       <script type="text/template">
         # Objects in Objects in Objects
 
-        <img src="ChartJS-Datamodel.png">
+        <img src="https://docs.google.com/drawings/d/e/2PACX-1vT6FLHiQ-bcat5NfjnOmLAPur3skZDjVvuQyYVW0QyPUHn5NXjs0g6JkqUH22wzdbFiVxUSGwRgnWoe/pub?w=960&amp;h=720">
 
       </script>
     </section>
@@ -311,7 +311,7 @@ object.
   <script type="text/template">
     # Another way to code the Chart Configuration
 
-Since chartConfiguration is a single data-structure, you could also create 
+Because chartConfiguration is a single data-structure, you could also create 
 the chartConfiguration all at once as one big 
 object.
 
@@ -368,14 +368,12 @@ that are relevant to you.
  # We can add options to change how our graph looks!
 
 ```javascript
-var ctx = document.getElementById("myChart") .getContext('2d');
 
-var chartConfiguration = {
-...
-}
+// As before
+var chartConfiguration = { };
 
-
-chartDefinition.options = {"scales":{"yAxes":[{"ticks":{"beginAtZero":true}}]}};
+// ADD THIS LINE
+chartConfiguration.options = {"scales":{"yAxes":[{"ticks":{"beginAtZero":true}}]}};
 new Chart(ctx, chartConfiguration);
 ```
 </script>
@@ -389,7 +387,7 @@ new Chart(ctx, chartConfiguration);
 We'll get into the details later, but right now we'll have to add one 
 last branch in our chartConfiguration tree.
 
-TODOTODOTODOTODO
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vSFH2QfC-nLcrHPgFx7nG1kh5cpk_Tq85BEaJlWesKxZMZgMr93QVZndim95eiagWVDXxzGO-9SJg_2/pub?w=960&h=720">
 </script>
  </section>
 
@@ -415,11 +413,11 @@ Here are some of the things we can have options about:
 # An even bigger family:
 
 We can also have options that are specific to particular chart types. For 
-example line.spanGaps for whether lines in a line graph should cross missing
-data or bar.barThickness to set how thick the bars should be in a bar
+example 
+
+- line.spanGaps - how line graph lines deal with missing data
+- bar.barThickness - to set how thick the bars should be in a bar
 graph.
-
-
 
 </script>
  </section>
@@ -1058,7 +1056,7 @@ var fails = 'This string's value is not going to work!';
       <script type="text/template">
         # Accessing an Object Member
 
-        Since objects hold multiple values, they can't be accessed by using the variable name. Object values are accessed using **dot notation**.
+        Because objects hold multiple values, they can't be accessed by using the variable name. Object values are accessed using **dot notation**.
 
         To access the value for the `drinkType` property, it would look like this:
 
