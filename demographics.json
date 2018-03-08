@@ -1,74 +1,110 @@
 [
   {
-    "age": "Under 5 years",
-    "count": 21434
+    "AgeRange": "Under 5 years",
+    "Count": 21434,
+    "Males": 10955,
+    "Females": 10479
   },
   {
-    "age": "5 to 9 years",
-    "count": 20785
+    "AgeRange": "5 to 9 years",
+    "Count": 20785,
+    "Males": 10624,
+    "Females": 10162
   },
   {
-    "age": "10 to 14 years",
-    "count": 19893
+    "AgeRange": "10 to 14 years",
+    "Count": 19893,
+    "Males": 10178,
+    "Females": 9714
   },
   {
-    "age": "15 to 19 years",
-    "count": 21086
+    "AgeRange": "15 to 19 years",
+    "Count": 21086,
+    "Males": 10719,
+    "Females": 10367
   },
   {
-    "age": "20 to 24 years",
-    "count": 21154
+    "AgeRange": "20 to 24 years",
+    "Count": 21154,
+    "Males": 10684,
+    "Females": 10470
   },
   {
-    "age": "25 to 29 years",
-    "count": 21453
+    "AgeRange": "25 to 29 years",
+    "Count": 21453,
+    "Males": 10928,
+    "Females": 10525
   },
   {
-    "age": "30 to 34 years",
-    "count": 19632
+    "AgeRange": "30 to 34 years",
+    "Count": 19632,
+    "Males": 9761,
+    "Females": 9871
   },
   {
-    "age": "35 to 39 years",
-    "count": 19888
+    "AgeRange": "35 to 39 years",
+    "Count": 19888,
+    "Males": 9902,
+    "Females": 9986
   },
   {
-    "age": "40 to 44 years",
-    "count": 20559
+    "AgeRange": "40 to 44 years",
+    "Count": 20559,
+    "Males": 10172,
+    "Females": 10387
   },
   {
-    "age": "45 to 49 years",
-    "count": 22527
+    "AgeRange": "45 to 49 years",
+    "Count": 22527,
+    "Males": 11092,
+    "Females": 11435
   },
   {
-    "age": "50 to 54 years",
-    "count": 21860
+    "AgeRange": "50 to 54 years",
+    "Count": 21860,
+    "Males": 10692,
+    "Females": 11169
   },
   {
-    "age": "55 to 59 years",
-    "count": 19172
+    "AgeRange": "55 to 59 years",
+    "Count": 19172,
+    "Males": 9318,
+    "Females": 9854
   },
   {
-    "age": "60 to 64 years",
-    "count": 16223
+    "AgeRange": "60 to 64 years",
+    "Count": 16223,
+    "Males": 7667,
+    "Females": 8556
   },
   {
-    "age": "65 to 69 years",
-    "count": 12020
+    "AgeRange": "65 to 69 years",
+    "Count": 12020,
+    "Males": 5672,
+    "Females": 6349
   },
   {
-    "age": "70 to 74 years",
-    "count": 8936
+    "AgeRange": "70 to 74 years",
+    "Count": 8936,
+    "Males": 4063,
+    "Females": 4873
   },
   {
-    "age": "75 to 79 years",
-    "count": 7181
+    "AgeRange": "75 to 79 years",
+    "Count": 7181,
+    "Males": 3020,
+    "Females": 4161
   },
   {
-    "age": "80 to 84 years",
-    "count": 5783
+    "AgeRange": "80 to 84 years",
+    "Count": 5783,
+    "Males": 2408,
+    "Females": 3375
   },
   {
-    "age": "85 years and over",
-    "count": 4693
+    "AgeRange": "85 years and over",
+    "Count": 4693,
+    "Males": 1631,
+    "Females": 3062
   }
 ]
