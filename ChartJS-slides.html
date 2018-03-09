@@ -218,14 +218,17 @@ new Chart(ctx, chartConfiguration);
 	   <canvas id="blankChart" width="100" height="100"></canvas>
     </div>
     <script>
-var ctx = document.getElementById("blankChart") .getContext('2d');
-ctx.height=100;
+function makeBlankChart(){
+  var ctx = document.getElementById("blankChart") .getContext('2d');
+  ctx.height=100;
 
-var data = {}
+  var data = {};
 
-var chartConfiguration = {"type":"bar", "data":data};
+  var chartConfiguration = {type:"bar", data: data};
 
-new Chart(ctx, chartConfiguration);
+  new Chart(ctx, chartConfiguration);
+};
+makeBlankChart();
     </script>
 
     </section>
@@ -391,7 +394,7 @@ that are relevant to you.
     </section>
 
 
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         # Optional options
       </script>
@@ -495,6 +498,7 @@ new Chart(ctx, chartConfiguration);
  	   <canvas id="titleChart" width="800" height="800"></canvas>
    </div>
      <script>
+function makeTitleChart(){
  var ctx = document.getElementById("titleChart") .getContext('2d');
 
  var chartConfiguration = {
@@ -516,6 +520,7 @@ new Chart(ctx, chartConfiguration);
   }
  }
 
+
  chartConfiguration.options = 
   { scales: 
       {yAxes:
@@ -527,8 +532,11 @@ new Chart(ctx, chartConfiguration);
        fontColor: "#B109AA"}
  };
 
+new Chart(ctx, chartConfiguration);
 
- new Chart(ctx, chartConfiguration);
+}
+makeTitleChart();
+
      </script>
    </section>
 
@@ -565,31 +573,34 @@ var chartConfiguration =
   <canvas id="horizontalChart"  width="400" height="400"></canvas>
 </div>
 <script>
-var ctx = document.getElementById("horizontalChart") .getContext('2d');
+function horizontalChart(){
+  var ctx = document.getElementById("horizontalChart") .getContext('2d');
 
-var chartConfiguration = {
-    "type": "horizontalBar",
-    "data": {
-        "labels": ["Jan", "Feb", "Mar", "Apr"],
-        "datasets": [
-            {
-                "label": "2017 Data",
-                "backgroundColor": "red",
-                "data": [
-                    65, 59, 80, 81
-                ]
-            },
-            {
-                "label": "2018 Data",
-                "backgroundColor": "blue",
-                "data": [
-                    83, 87, 79, 93
-                ]
-            }
-        ]
-    }
+  var chartConfiguration = {
+      "type": "horizontalBar",
+      "data": {
+          "labels": ["Jan", "Feb", "Mar", "Apr"],
+          "datasets": [
+              {
+                  "label": "2017 Data",
+                  "backgroundColor": "red",
+                  "data": [
+                      65, 59, 80, 81
+                  ]
+              },
+              {
+                  "label": "2018 Data",
+                  "backgroundColor": "blue",
+                  "data": [
+                      83, 87, 79, 93
+                  ]
+              }
+          ]
+      }
+  }
+  new Chart(ctx, chartConfiguration);
 }
-new Chart(ctx, chartConfiguration);
+horizontalChart();
 </script>
     </section>
 
@@ -599,43 +610,46 @@ new Chart(ctx, chartConfiguration);
   <canvas id="lineChart"  width="400" height="400"></canvas>
 </div>
         <script>
-
+function showLineChart(){
         var ctx = document.getElementById("lineChart") .getContext('2d');
 
-        var dataset1 = {label:"My First Dataset",
-                        fill:false,
-                        borderColor:"rgb(75, 192, 192)",
-                        lineTension: 0.1};
+        var dataset1 = {};
+        dataset1.label = "My First Dataset";
+        dataset1.fill = false;
+        dataset1.borderColor = "0x4BC0C0";
+        dataset1.lineTension = 0.1;
         dataset1.data = [65,59,80,81,56,55,40];
 
-        var data = 
-          {labels:["January","February","March",
-                    "April","May","June","July"],
-            datasets:[dataset1]};
+        var data =  {};
+        data.labels = ["January","February","March",
+              "April","May","June","July"];
+        data.datasets = [dataset1];
 
         var chartConfiguration = 
           {type:"line",
             data: data};
 
         new Chart(ctx,chartConfiguration);
+}
+showLineChart()
         </script>
     </section>
-
 
     <section class="slide" data-markdown>
       <script type="text/template">
 #Line chart
 ```javascript
-var dataset1 = {label:"My First Dataset",
-                fill:false,
-                borderColor:"rgb(75, 192, 192)",
-                lineTension: 0.1};
+var dataset1 = {};
+dataset1.label = "My First Dataset";
+dataset1.fill = false;
+dataset1.borderColor = "0x4BC0C0";
+dataset1.lineTension = 0.1;
 dataset1.data = [65,59,80,81,56,55,40];
 
-var data = 
-  {labels:["January","February","March",
-      "April","May","June","July"],
-    datasets:[dataset1]};
+var data =  {};
+data.labels = ["January","February","March",
+      "April","May","June","July"];
+data.datasets = [dataset1];
 
 var chartConfiguration = 
   {type:"line",
@@ -653,19 +667,22 @@ new Chart(ctx,chartConfiguration);
   <canvas id="pieChart"  width="400" height="400"></canvas>
 </div>
 <script>
-var ctx = document.getElementById("pieChart") .getContext('2d');
+function makePieChart(){
+  var ctx = document.getElementById("pieChart") .getContext('2d');
 
-var dataset1 = {label:"My First Dataset",
-data:[300,50,100],
-backgroundColor:["Red", "Blue", "Yellow"]};
+  var dataset1 = {label:"My First Dataset",
+  data:[300,50,100],
+  backgroundColor:["Red", "Blue", "Yellow"]};
 
-var data = {labels:["Red","Blue","Yellow"],
-"datasets": [dataset1]};
+  var data = {labels:["Red","Blue","Yellow"],
+  "datasets": [dataset1]};
 
 
-var chartConfiguration = {type:"pie", data:data};
+  var chartConfiguration = {type:"pie", data:data};
 
-new Chart(ctx, chartConfiguration);
+  new Chart(ctx, chartConfiguration);
+}
+makePieChart();
 </script>
 
       </script>
@@ -699,27 +716,30 @@ new Chart(ctx, chartConfiguration);
 <p>Same as pie-chart but with type="doughnut" or type="polarArea"</p>
 
 <div style="width:400px; height:400px">
-  <canvas id="dougnutChart"  width="400" height="400"></canvas>
+  <canvas id="doughnutChart"  width="400" height="400"></canvas>
 </div>
 <div style="width:400px; height:400px">
   <canvas id="polarArea"  width="400" height="400"></canvas>
 </div>
 <script>
-var ctx = document.getElementById("dougnutChart") .getContext('2d');
+function makeDoughnutChart(){
+  var ctx = document.getElementById("doughnutChart") .getContext('2d');
 
-var dataset1 = {label:"My First Dataset",
-data:[300,50,100],
-backgroundColor:["Red", "Blue", "Yellow"]};
+  var dataset1 = {label:"My First Dataset",
+  data:[300,50,100],
+  backgroundColor:["Red", "Blue", "Yellow"]};
 
-var data = {labels:["Red","Blue","Yellow"],
-"datasets": [dataset1]};
+  var data = {labels:["Red","Blue","Yellow"],
+  "datasets": [dataset1]};
 
-var chartConfiguration = {type:"doughnut", data:data};
+  var chartConfiguration = {type:"doughnut", data:data};
 
-new Chart(ctx, chartConfiguration);
-var ctx = document.getElementById("polarArea") .getContext('2d');
-var chartConfiguration = {type:"polarArea", data:data};
-new Chart(ctx, chartConfiguration);
+  new Chart(ctx, chartConfiguration);
+  var ctx = document.getElementById("polarArea") .getContext('2d');
+  var chartConfiguration = {type:"polarArea", data:data};
+  new Chart(ctx, chartConfiguration);
+}
+makeDoughnutChart();
 </script>
 
       </script>
@@ -739,7 +759,7 @@ new Chart(ctx, chartConfiguration);
 
   </section>
 
-    <section class="slide title">
+    <section class="slide title" data-toc>
       <h1>Wrangling data</h1>
     </section>
 
@@ -857,7 +877,7 @@ new Chart(ctx, chartConfiguration);
 
   <section class="slide" >
         <h1>Loading JSON</h1>
-        <p>There are two steps. </p>
+        <p>There are two steps.</p>
 
         <p>1. Put a JQuery script tag <b>before</b> your other script tags.</p>
 <code><xmp><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
@@ -895,12 +915,13 @@ jsondata = JSON.parse(json.responseText);
 // As before
 jsondata = JSON.parse(json.responseText); 
 
+// new code starts here
 data = []
 
 jsondata.forEach( function(s) { 
-     data.append();
+     data.append(s);
 } );
-
+// new code ends here
 
 var dataset1 = {label:"Age data",
     data:[300,50,100],
