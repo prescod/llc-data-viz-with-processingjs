@@ -897,8 +897,7 @@ makeDoughnutChart();
 
 ```javascript
 var url = "https://prescod.github.io/llc-data-viz-with-processingjs/demographics.json";
-var json = $.getJSON({'url': url, 'async': false});
-var jsondata = JSON.parse(json.responseText); 
+var jsondata = $.getJSON({'url': url, 'async': false}).responseJSON;
 
 // uncomment the next line to see the data
 // console.log(jsondata);
@@ -914,7 +913,7 @@ var jsondata = JSON.parse(json.responseText);
 ```javascript
 // As before
 // new code starts here
-var jsondata = JSON.parse(json.responseText); 
+var jsondata = $.getJSON({'url': url, 'async': false}).responseJSON;
 
 // new code starts here
 var labels = []
