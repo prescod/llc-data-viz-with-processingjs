@@ -898,7 +898,7 @@ makeDoughnutChart();
 ```javascript
 var url = "https://prescod.github.io/llc-data-viz-with-processingjs/demographics.json";
 var json = $.getJSON({'url': url, 'async': false});
-jsondata = JSON.parse(json.responseText); 
+var jsondata = JSON.parse(json.responseText); 
 
 // uncomment the next line to see the data
 // console.log(jsondata);
@@ -913,18 +913,19 @@ jsondata = JSON.parse(json.responseText);
 
 ```javascript
 // As before
-jsondata = JSON.parse(json.responseText); 
+// new code starts here
+var jsondata = JSON.parse(json.responseText); 
 
 // new code starts here
-data = []
+var numbers = [];
 
 jsondata.forEach( function(s) { 
-     data.append(s);
+     numbers.append(s);
 } );
 // new code ends here
 
 var dataset1 = {label:"Age data",
-    data:[300,50,100],
+    data: numbers,
     backgroundColor:["Red", "Blue", "Yellow"]};
 
 ```
