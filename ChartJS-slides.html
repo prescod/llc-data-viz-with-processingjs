@@ -917,16 +917,26 @@ var jsondata = JSON.parse(json.responseText);
 var jsondata = JSON.parse(json.responseText); 
 
 // new code starts here
-var numbers = [];
+var labels = []
+var counts = [];
 
-jsondata.forEach( function(s) { 
-     numbers.append(s);
+jsondata.forEach( function(obj) { 
+     labels.push(obj.AgeRange);
+     counts.push(obj.Count);
 } );
 // new code ends here
 
 var dataset1 = {label:"Age data",
-    data: numbers,
-    backgroundColor:["Red", "Blue", "Yellow"]};
+    data: counts};
+
+var data = {};
+data.labels = labels;
+data.datasets = [dataset1];
+
+var chartConfiguration = {
+ "type": "bar",
+ "data": data
+}
 
 ```
       </script>
@@ -966,15 +976,15 @@ var dataset1 = {label:"Age data",
 ```javascript
 var url = "https://prescod.github.io/llc-data-viz-with-processingjs/demographics.csv";
 var csv = $.get({'url': url, 'async': false});
-rowdata = csv.responseText.split("\n");
+var rowdata = csv.responseText.split("\n");
 
 console.log(rowdata);
 
-var counts = [];
 var labels = []
+var counts = [];
 
 rowdata.forEach( function(row) { 
-     parts = row.split(",");
+     var parts = row.split(",");
      labels.push(parts[0])
      counts.push(parts[1]);
 } );
@@ -984,6 +994,7 @@ var dataset1 = {label:"Age Data",
 };
 
 // The rest is as before
+
 ```
       </script>
   </section>
